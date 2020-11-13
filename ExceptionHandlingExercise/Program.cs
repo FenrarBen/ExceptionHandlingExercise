@@ -17,13 +17,27 @@ namespace ExceptionHandlingExercise
             // and Exceptions will be thrown 
             // Below we will set this up 
             // ------------------------------------------------------------------------------
-
+            char[] arr = new char[] { '1', '2', '3', '4', '5', '6', 'a', 'b', 'c' };
+            List<int> integers = new List<int>();
+            string str = "";
 
 
             //TODO START HERE:
             
             // Make a foreach loop to iterate through your character array
-            
+            foreach (var ch in arr)
+            {
+                try
+                {
+                    str = ch.ToString();
+                    int num = int.Parse(str);
+                    integers.Add(num);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Unable to Parse '{ch}'");
+                }
+            }
                 // Now create a try catch
                 
                 
